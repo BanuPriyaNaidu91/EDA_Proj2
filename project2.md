@@ -59,8 +59,8 @@ dev.off()
 
 Question 3 ([plot3.R](https://github.com/BanuPriyaNaidu91/EDA_Proj2/blob/master/plot3.R))
 ----------
-Of the four types of sources indicated by the 𝚝𝚢𝚙𝚎 (point, nonpoint, onroad, nonroad) variable, which of these four sources have seen decreases in emissions from 1999–2008 for Baltimore City? 
-Which have seen increases in emissions from 1999–2008? Use the ggplot2 plotting system to make a plot answer this question.
+Of the four types of sources indicated by the 𝚝𝚢𝚙𝚎 (point, nonpoint, onroad, nonroad) variable, which of these four sources have seen decreases in emissions from 1999 to 2008 for Baltimore City? 
+Which have seen increases in emissions from 1999 to 2008? Use the ggplot2 plotting system to make a plot answer this question.
 
 ```R
 # Subset NEI data by Baltimore
@@ -72,7 +72,7 @@ ggplot(baltimoreNEI,aes(factor(year),Emissions,fill=type)) +
   geom_bar(stat="identity") +
   facet_grid(.~type,scales = "free",space="free") + 
   labs(x="year", y=expression("Total PM"[2.5]*" Emission (Tons)")) + 
-  labs(title=expression("PM"[2.5]*" Emissions, Baltimore City 1999-2008 by Source Type"))
+  labs(title=expression("PM"[2.5]*" Emissions, Baltimore City 1999 to 2008 by Source Type"))
 
 dev.off()
 ```
@@ -81,7 +81,7 @@ dev.off()
 
 Question 4 ([plot4.R](https://github.com/BanuPriyaNaidu91/EDA_Proj2/blob/master/plot4.R))
 ----------
-Across the United States, how have emissions from coal combustion-related sources changed from 1999–2008?
+Across the United States, how have emissions from coal combustion-related sources changed from 1999 to 2008?
 
 ```R
 # Subset coal combustion related NEI data
@@ -95,7 +95,7 @@ png("plot4.png")
 ggplot(combustionNEI,aes(x = factor(year),y = Emissions/10^5)) +
   geom_bar(stat="identity", fill ="#FF9999", width=0.75) +
   labs(x="year", y=expression("Total PM"[2.5]*" Emission (10^5 Tons)")) + 
-  labs(title=expression("PM"[2.5]*" Coal Combustion Source Emissions Across US from 1999-2008"))
+  labs(title=expression("PM"[2.5]*" Coal Combustion Source Emissions Across US from 1999 to 2008"))
 
 dev.off()
 ```
@@ -104,7 +104,7 @@ dev.off()
 
 Question 5 ([plot5.R](https://github.com/BanuPriyaNaidu91/EDA_Proj2/blob/master/plot5.R))
 ----------
-How have emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?
+How have emissions from motor vehicle sources changed from 1999 to 2008 in Baltimore City?
 
 ```R
 # Gather the subset of the NEI data which corresponds to vehicles
@@ -120,7 +120,7 @@ png("plot5.png")
 ggplot(baltimoreVehiclesNEI,aes(factor(year),Emissions)) +
   geom_bar(stat="identity", fill ="#FF9999" ,width=0.75) +
   labs(x="year", y=expression("Total PM"[2.5]*" Emission (10^5 Tons)")) + 
-  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore from 1999-2008"))
+  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore from 1999 to 2008"))
 
 dev.off()
 ```
@@ -153,7 +153,7 @@ ggplot(bothNEI, aes(x=factor(year), y=Emissions, fill=city)) +
   geom_bar(aes(fill=year),stat="identity") +
   facet_grid(scales="free", space="free", .~city) +
   labs(x="year", y=expression("Total PM"[2.5]*" Emission (Kilo-Tons)")) + 
-  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore & LA, 1999-2008"))
+  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore & LA, 1999 to 2008"))
 
 dev.off()
 ```
