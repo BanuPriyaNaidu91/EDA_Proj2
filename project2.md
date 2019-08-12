@@ -120,7 +120,7 @@ png("plot5.png")
 ggplot(baltimoreVehiclesNEI,aes(factor(year),Emissions)) +
   geom_bar(stat="identity", fill ="#FF9999" ,width=0.75) +
   labs(x="year", y=expression("Total PM"[2.5]*" Emission (10^5 Tons)")) + 
-  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore from 1999 to 2008"))
+  labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore from 1999-2008"))
 
 dev.off()
 ```
